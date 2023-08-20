@@ -1,11 +1,13 @@
 ﻿using Ecommerce_App.Models;
 using Ecommerce_App.Repositories;
 using Ecommerce_App.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce_App.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly IEcommerceRepository<Product> _productRepository;
@@ -53,7 +55,7 @@ namespace Ecommerce_App.Controllers
             try
             {
                 string fileName = UploadFile(model.File) ?? string.Empty;
-                
+
                 var category = _categoryRepository.FindById(model.CategoryId);
                 Product product = new Product
                 {

@@ -1,10 +1,12 @@
 ﻿using Ecommerce_App.Models;
 using Ecommerce_App.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce_App.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly IEcommerceRepository<Category> _categoryRepository;
