@@ -1,0 +1,498 @@
+﻿@{
+    //ViewData["Title"] = "Products";
+}
+
+<div class="flex-view ">
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <span class="me-2"><i class="fa-solid fa-filter"></i></span>Filters
+    </button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+                <span><i class="fa-solid fa-filter pe-2"></i></span>Filters
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Filter By Category
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-auto me-auto">
+                                                        All Categories
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" />
+                                        <label class="form-check-label" for="flexCheckDefault1">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-auto me-auto">
+                                                        Laptops
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" />
+                                        <label class="form-check-label" for="flexCheckDefault2">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        Desktops
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" />
+                                        <label class="form-check-label" for="flexCheckDefault3">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        all-in-ones
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4" />
+                                        <label class="form-check-label" for="flexCheckDefault4">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        two-in-ones
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" />
+                                        <label class="form-check-label" for="flexCheckDefault5">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        smartphones
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6" />
+                                        <label class="form-check-label" for="flexCheckDefault6">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        smart tablets
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7" />
+                                        <label class="form-check-label" for="flexCheckDefault7">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        smart watches
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Filter By Brand Name
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-auto me-auto">
+                                                        All Brand Names
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" />
+                                        <label class="form-check-label" for="flexCheckDefault1">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-auto me-auto">
+                                                        Lenovo
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" />
+                                        <label class="form-check-label" for="flexCheckDefault2">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        HP
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" />
+                                        <label class="form-check-label" for="flexCheckDefault3">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        Huawei
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4" />
+                                        <label class="form-check-label" for="flexCheckDefault4">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        LG
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" />
+                                        <label class="form-check-label" for="flexCheckDefault5">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        Apple
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6" />
+                                        <label class="form-check-label" for="flexCheckDefault6">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        DELL
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Filter By Price
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0">
+                                    <div class="">
+                                        <h6 class="p-1">From</h6>
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control"
+                                                   aria-label="Amount (to the nearest dollar)" />
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                        <h6 class="p-1">To</h6>
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control"
+                                                   aria-label="Amount (to the nearest dollar)" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-auto me-auto">
+                                                        All Prices
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" />
+                                        <label class="form-check-label" for="flexCheckDefault1">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-auto me-auto">
+                                                        &#60; $1000
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" />
+                                        <label class="form-check-label" for="flexCheckDefault2">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        $1000 - $2000
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" />
+                                        <label class="form-check-label" for="flexCheckDefault3">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        $2000 - $3000
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4" />
+                                        <label class="form-check-label" for="flexCheckDefault4">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        $3000 - $4000
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" />
+                                        <label class="form-check-label" for="flexCheckDefault5">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        $4000 - $5000
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6" />
+                                        <label class="form-check-label" for="flexCheckDefault6">
+                                            <div class="container">
+                                                <div class="row align-items-start">
+                                                    <div class="col-auto me-auto">
+                                                        $5000 - $6000
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <span class="badge text-bg-secondary">4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="featured-products" class="featured-products w-100 text-center py-3">
+        <div class="container py-3">
+            <div class="main-title py-5">
+                <span><FontAwesomeIcon icon={faCircleNodes} size="4x" /></span>
+                <h2>Products</h2>
+                <p>Find your desired product</p>
+            </div>
+
+            <div class="row">
+                @foreach (var product in ViewBag.product)
+                {
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="box mb-4 py-4 px-3 bg-white">
+                            @if (product.ImageUrl != null)
+                            {
+                                <img src="~/uploads/@product.ImageUrl" class="img-fluid" />
+                            }
+                            <a class="btn btn-link" asp-action="Details" asp-route-id="@product.Id">
+                                <h5 class="mt-3">@product.Name</h5>
+                            </a>
+                            <div class="d-flex justify-content-center">
+                                <h5 class="mx-1"><span>$</span>@product.Price</h5>
+                                @*<del class="mx-1">$199.00</del>*@
+                            </div>
+                            <a class="btn btn-primary mt-2 w-100" asp-controller="Products" asp-action="addCart" asp-route-id="@product.Id">Add to cart</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

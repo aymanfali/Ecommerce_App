@@ -1,0 +1,109 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="d-lg-flex d-md-block d-sm-block">
+    <div id="carouselExampleIndicators" class="carousel slide w-lg-50 w-md-100 w-sm-100 mx-5 my-5">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                @if (Model.ImageUrl != null)
+                {
+                    <img src="~/uploads/@Model.ImageUrl" style="width:512px;" class="img-thumbnail" />
+                }
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="itemSpecs box mx-3 my-3 py-4 px-3 bg-white">
+        <h5 class="fs-4 fw-bold">@Html.DisplayFor(model => model.Name)</h5>
+        <div class="d-flex my-3">
+            <h5 class="fs-4 fw-bold"><span>$</span>@Html.DisplayFor(model => model.Price)</h5>
+            @*<del class="mx-1">$199.00</del>*@
+            <div class="input-group mb-3 mx-3">
+                <button class="btn btn-primary" type="button" id="qdecrement" onclick="decreaseValue()"><i class="fa-solid fa-minus"></i></button>
+                <input id="items-quantity" type="text" value="1" class="form-control form-control-sm border-0 text-center" placeholder="" aria-label="Example text with button addon"
+                       aria-describedby="button-addon1">
+                <button class="btn btn-primary" type="button" id="qincrement" onclick="increaseValue()"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+        <h6>@Html.DisplayFor(model => model.Description)</h6>
+        <a class="btn btn-primary mt-2 w-100" @*asp-controller="Products" asp-action="addCart" asp-route-id=""*@>Add to cart</a>
+    </div>
+</div>
+<div class="bg-light mx-4 my-4">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Description</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Information</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Reviews (<span>0</span>)</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade mx-3 my-3" id="tab-pane-1">
+            <h4>Product Description</h4>
+            <p>
+                Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy
+            </p>
+            <p>
+                Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy
+            </p>
+        </div>
+        <div class="tab-pane fade mx-3 my-3" id="tab-pane-2">
+            <h4>Product Information</h4>
+            <p>
+                Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy
+            </p>
+            <p>
+                Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy
+            </p>
+        </div>
+        <div class="tab-pane fade active show mx-3 my-3" id="tab-pane-3">
+            <h4>Product Reviews</h4>
+            <p>
+                Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy
+            </p>
+            <p>
+                Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc ipsum et,
+                labore clita lorem magna duo dolor no sea Nonumy
+            </p>
+        </div>
+    </div>
+</div>

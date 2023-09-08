@@ -1,0 +1,166 @@
+﻿@{
+    ViewData["Title"] = "ListCart";
+    decimal subtotal = 0;
+    decimal shippingPrice = 0;
+}
+
+<div class="container-fluid">
+    <div class="checkout-cart container">
+        <div class="d-lg-flex d-md-block d-sm-block">
+            <div class="col-lg-8 table-responsive m-4">
+                <table class="table table-light table-borderless table-hover text-center mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody class="align-middle">
+                        @{
+                            int CartItemsCount = 0;
+                            @foreach (var item in ViewBag.carts)
+                            {
+                                string txt_class = "quantity_" + item.Product.Id;
+                                CartItemsCount++;
+                                decimal total = item.Product.Price * item.Quantity;
+                                <tr class="align-middle">
+                                    <td>
+                                        <!--div class="d-flex productInfo-check"-->
+
+                                        <h6 class="mt-4">@item.Product.Name</h6>
+                                        <!--/div-->
+                                    </td>
+                                    <td><span>$</span>@item.Product.Price</td>
+                                    <td>
+                                        <h6 class="mt-4">@item.Quantity</h6>
+                                    </td>
+                                    <td><span>$</span>@total</td>
+                                    <td>
+                                        <a class="btn btn-danger" asp-controller="Products" asp-action="deleteCart" asp-route-id="@item.Product.Id">
+                                            <i class="fa-solid fa-remove"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                subtotal += total;
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-4 m-4">
+                <h5 class="section-title position-relative text-uppercase py-3">cart summary</h5>
+                <div class="bg-light p-3">
+                    <div class="border-bottom pb-2">
+                        <div class="d-flex justify-content-between m-1">
+                            <h6>Subtotal</h6>
+                            <h6><span>$</span>@subtotal</h6>
+                        </div>
+                        <div class="d-flex justify-content-between m-1">
+                            <h6 class="font-weight-medium">Shipping</h6>
+                            <h6 class="font-weight-medium">
+                                <span>$</span>@shippingPrice
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <div class="d-flex justify-content-between mt-1 mb-3">
+                            <h5>Total</h5>
+                            <h5>
+                                <span>$</span>@(shippingPrice + subtotal)
+                            </h5>
+                        </div>
+                        <a class="btn btn-block btn-primary font-weight-bold py-3 w-100" onclick="show_billing()">Proceed To Checkout</a>
+                    </div>
+                    <!--form class="input-group d-flex my-2" role="search">
+                        <input class="form-control" type="search" placeholder="Copun Code" aria-label="Search" />
+                        <button class="btn btn-primary" type="submit">Apply Copun</button>
+                    </form-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="billing-address container" id="billing-address">
+    <hr/>
+        <a class="btn btn-outline-danger" id="close_billing" onclick="hide_billing()">
+            <i class="fa-solid fa-remove"></i>
+        </a>
+        <div class="d-lg-flex d-md-block d-sm-block">
+            <div class="col-lg-8 table-responsive m-4">
+                <h5 class="section-title position-relative text-uppercase py-3">biling address</h5>
+                <div class="bg-light p-3">
+                    <form action="" method="post">
+                        <div class="d-flex">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">First Name</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" />
+                            </div>
+                            <div class="input-group ms-3 mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Last Name</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" />
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                                <input type="email" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" />
+                            </div>
+                            <div class="input-group ms-3 mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Mobile Number</span>
+                                <input type="tel" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" />
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Address Line 1</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" />
+                            </div>
+                            <div class="input-group ms-3 mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Address Line 2</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" />
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Country</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" />
+                            </div>
+                            <div class="input-group ms-3 mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">City</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" />
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">State</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" />
+                            </div>
+                            <div class="input-group ms-3 mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Zip code</span>
+                                <input type="number" class="form-control" aria-label="Sizing example input"
+                                       aria-describedby="inputGroup-sizing-default" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 m-4">
+                <h5 class="section-title position-relative text-uppercase py-3">Payment Info</h5>
+                <div class="bg-light p-3">
+                    <a class="btn btn-block btn-primary font-weight-bold w-100">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

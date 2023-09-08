@@ -25,7 +25,7 @@ namespace Ecommerce_App.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Ecommerce_App.Models.Category", b =>
+            modelBuilder.Entity("Ecommerce_App.Areas.Admin.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace Ecommerce_App.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Ecommerce_App.Models.Product", b =>
+            modelBuilder.Entity("Ecommerce_App.Areas.Admin.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,9 +80,9 @@ namespace Ecommerce_App.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Ecommerce_App.Models.Product", b =>
+            modelBuilder.Entity("Ecommerce_App.Areas.Admin.Models.Product", b =>
                 {
-                    b.HasOne("Ecommerce_App.Models.Category", "Categories")
+                    b.HasOne("Ecommerce_App.Areas.Admin.Models.Category", "Categories")
                         .WithMany()
                         .HasForeignKey("CategoriesId")
                         .OnDelete(DeleteBehavior.Cascade)

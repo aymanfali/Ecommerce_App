@@ -1,36 +1,33 @@
 ﻿using Ecommerce_App.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+using Ecommerce_App.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Ecommerce_App.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IEcommerceRepository<Product> _productsRepository;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<ApplicationUser> userManager)
+        public HomeController(IEcommerceRepository<Product> productsRepository)
         {
-            _logger = logger;
-            _userManager = userManager;
+            _productsRepository = productsRepository;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public ActionResult Index()
         {
-            ViewData["Id"] = _userManager.GetUserId(User);
-            return View();
+            var products = _productsRepository.List();
+            return View(products);
         }
 
-        public IActionResult Privacy()
+        public ActionResult Privacy()
         {
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public ActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }

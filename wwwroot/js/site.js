@@ -1,61 +1,58 @@
-﻿//$(document).addEventListener(function () {
-//    /*===== LINK ACTIVE =====*/
-//    const linkColor = document.querySelectorAll('.nav_link');
+﻿// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () { scrollFunction() };
 
-//    function colorLink() {
-//        if (linkColor) {
-//            linkColor.forEach(l => l.classList.remove('active'));
-//            this.classList.add('active');
-//        }
-//    }
-//    linkColor.forEach(l => l.addEventListener('click', colorLink));
-
-//    // Your code to run since DOM is loaded and ready
-//});
-
-// Get the container element
-var btnContainer = document.getElementById("navbar");
-
-// Get all buttons with class="btn" inside the container
-var btns = btnContainer.getElementsByClassName("nav_link");
-
-// Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-    });
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("goToTop-btn").style.display = "block";
+    } else {
+        document.getElementById("goToTop-btn").style.display = "none";
+    }
 }
 
-/**************************************************************************** */
-/**************************************************************************** */
+// When the user clicks on the button, scroll to the top of the document
+function backToTopEvent() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
+//////////////////////////////////////////////////////////////////////////////////////
 
-//$(document).ready(function () {
-//    var trigger = $('.hamburger'),
-//        isClosed = false;
+var value = parseInt(document.getElementById("items-quantity").value, 10);
+window.onload(
+    () => {
+        if (value == 1) {
+            document.getElementById("qdecrement").disabled = true;
+        } else {
+            document.getElementById("qdecrement").disabled = false;
+        }
+    }
+);
 
-//    trigger.click(function () {
-//        hamburger_cross();
-//    });
+function increaseValue() {
+    if (document.getElementById("qdecrement").disabled == true) {
+        document.getElementById("qdecrement").disabled = false;
+    }
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById("items-quantity").value = value;
+}
 
-//    function hamburger_cross() {
+function decreaseValue() {
+    value = isNaN(value) ? 0 : value;
+    value < 1 ? value = 1 : '';
+    if (value == 1) {
+        document.getElementById("qdecrement").disabled = true;
+    }
+    else {
+        value--;
+    }
+    document.getElementById("items-quantity").value = value;
+}
 
-//        if (isClosed == true) {
-//            overlay.hide();
-//            trigger.removeClass('is-open');
-//            trigger.addClass('is-closed');
-//            isClosed = false;
-//        } else {
-//            overlay.show();
-//            trigger.removeClass('is-closed');
-//            trigger.addClass('is-open');
-//            isClosed = true;
-//        }
-//    }
+function show_billing() {
+    document.getElementById("billing-address").style.display = "block";
+}
 
-//    $('[data-toggle="offcanvas"]').click(function () {
-//        $('#wrapper').toggleClass('toggled');
-//    });
-//});
+function hide_billing() {
+    document.getElementById("billing-address").style.display = "none";
+}

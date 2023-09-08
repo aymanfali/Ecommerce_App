@@ -2,10 +2,6 @@ using Ecommerce_App.Data;
 using Ecommerce_App.Models;
 using Ecommerce_App.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Razor;
-using System.Globalization;
-using Microsoft.AspNetCore.Localization;
 
 internal class Program
 {
@@ -33,6 +29,11 @@ internal class Program
 
         builder.Services.AddRazorPages();
 
+        builder.Services.AddSession(options =>
+        {
+            options.IdleTimeout = TimeSpan.FromMinutes(30);
+        });
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -43,12 +44,19 @@ internal class Program
             app.UseHsts();
         }
 
+        app.UseSession();
+
         app.UseHttpsRedirection();
+
         app.UseStaticFiles();
 
         app.UseRouting();
 
         app.UseAuthorization();
+
+        app.MapControllerRoute(
+            name: "Admin",
+            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
         app.MapControllerRoute(
             name: "default",

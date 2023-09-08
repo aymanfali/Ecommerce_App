@@ -1,6 +1,5 @@
 ﻿using Ecommerce_App.Models;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecommerce_App.ViewModels
 {

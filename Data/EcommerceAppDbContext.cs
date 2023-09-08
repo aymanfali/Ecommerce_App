@@ -7,10 +7,11 @@ namespace Ecommerce_App.Data
     {
         public EcommerceAppDbContext(DbContextOptions<EcommerceAppDbContext> options) : base(options)
         {
-            
+
         }
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
     }
 }
