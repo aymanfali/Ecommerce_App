@@ -95,6 +95,7 @@ namespace Ecommerce_App.Controllers
                     ViewBag.carts = dataCart;
                     return View();
                 }
+                TempData["ListCart"] = dataCart;
             }
             return RedirectToAction(nameof(Index));
         }

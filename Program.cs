@@ -1,3 +1,5 @@
+using Ecommerce_App;
+using Ecommerce_App.Clients;
 using Ecommerce_App.Data;
 using Ecommerce_App.Models;
 using Ecommerce_App.Repositories;
@@ -33,6 +35,15 @@ internal class Program
         {
             options.IdleTimeout = TimeSpan.FromMinutes(30);
         });
+
+        // paypal client configuration
+        builder.Services.AddSingleton(x =>
+            new PaypalClient(
+                builder.Configuration["PayPalOptions:ClientId"],
+                builder.Configuration["PayPalOptions:ClientSecret"],
+                builder.Configuration["PayPalOptions:Mode"]
+            )
+        );
 
         var app = builder.Build();
 
